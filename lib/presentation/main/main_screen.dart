@@ -13,13 +13,13 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final viewModel = context.watch<MainViewModel>();
-    print(viewModel.convertTimeList(viewModel.timeList?.length ?? 0));
+    print(viewModel.convertTime(i: viewModel.timeList.length));
     // print('timeList : ${viewModel.timeList}');
     // print('templist : ${viewModel.tempList}');
     return Scaffold(
       appBar: AppBar(
         leading: const FlutterLogo(),
-        title: const Text('오늘의 날씨'),
+        title:  Text('오늘의 날씨'),
         actions: [
           IconButton(
               onPressed: () async {
@@ -51,18 +51,18 @@ class _MainScreenState extends State<MainScreen> {
                             margin: const EdgeInsets.all(8.0),
                             child: ListTile(
                               title:
-                                  Text(viewModel.convertTimeList(index) ?? ''),
+                                  Text(viewModel.convertTimeList(i: index) ?? ''),
                               subtitle: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                      '온도: ${viewModel.tempList?[index] ?? ''}'),
+                                      '온도: ${viewModel.tempList[index]}°C'),
                                   Text(
-                                      '풍속: ${viewModel.windSpeedList?[index] ?? ''}'),
+                                      '풍속: ${viewModel.windSpeedList[index]}km/h'),
                                   Text(
-                                      '상대습도: ${viewModel.humidityList?[index] ?? ''}'),
+                                      '상대습도: ${viewModel.humidityList[index]}%'),
                                   Text(
-                                      '기압고도: ${viewModel.pressureList?[index] ?? ''}'),
+                                      '기압고도: ${viewModel.pressureList[index]}hPa'),
                                   // Text(
                                   //     '날씨: ${viewModel.weatherCodeList?[index] ?? ''}'),
                                 ],
