@@ -1,19 +1,19 @@
 class WeatherItem {
-  List<String>? time;
-  List<num>? temperature;
-  List<num>? weatherCode;
-  List<num>? relativeHumidity;
-  List<num>? windSpeed;
-  List<num>? pressure;
+  List<String> time=[];
+  List<num> temperature=[];
+  List<num> weatherCode=[];
+  List<num> relativeHumidity=[];
+  List<num> windSpeed=[];
+  List<num> pressure=[];
 
 //<editor-fold desc="Data Methods">
   WeatherItem({
-    this.time,
-    this.temperature,
-    this.weatherCode,
-    this.relativeHumidity,
-    this.windSpeed,
-    this.pressure,
+    required this.time,
+    required this.temperature,
+    required this.weatherCode,
+    required this.relativeHumidity,
+    required this.windSpeed,
+    required this.pressure,
   });
 
   @override
